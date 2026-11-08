@@ -1,0 +1,28 @@
+name: Northwilds
+options:
+  bundleIdPrefix: com.northwilds
+packages:
+  CMSOrbit:
+    url: https://github.com/bifrost-orbit/cms-sdk-swift
+    from: 0.2.0
+targets:
+  Northwilds:
+    type: application
+    supportedDestinations: [iOS, macOS]
+    deploymentTarget:
+      iOS: "17.0"
+      macOS: "14.0"
+    sources: [Northwilds]
+    dependencies:
+      - package: CMSOrbit
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.northwilds.app
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: "6.0"
+        IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_APP_SANDBOX: YES
+        ENABLE_OUTGOING_NETWORK_CONNECTIONS: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
